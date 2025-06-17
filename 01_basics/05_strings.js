@@ -6,8 +6,11 @@ console.log(`hello my name is ${name} and my repo count is ${repoCount}`);
 
 
 const gameName = new String("hiteshhc")
+console.log(gameName);
+console.log(gameName.toString());
+
 console.log(gameName[1])
-//objects of string prototype
+
 console.log(gameName.length)
 console.log(gameName.toUpperCase())
 console.log(gameName.charAt(2));
