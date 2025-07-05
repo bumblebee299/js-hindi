@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajax | XMLHttpRequest</title>
     <style>
-        
+        #cardConatiner{
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         
     </style>
 </head>
@@ -15,16 +23,21 @@
      2	HEADERS_RECEIVED :- send() has been called, and headers and status are available.
      3	LOADING    :-       Downloading; responseText holds partial data.
      4	DONE       :-       The operation is complete. -->
+
+     <button id="button">user card</button>
+
+     <div id="cardContainer"></div>
+
     
 </body>
 <script>
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
 
     const xhr = new XMLHttpRequest()
-    console.log(xhr.readyState);
+    // console.log(xhr.readyState);
 
     xhr.open('GET', requestUrl)
-    console.log(xhr.readyState);
+    // console.log(xhr.readyState);
 
     let followers = ""
     let photo = ""
@@ -46,13 +59,23 @@
 
 
     // card
-
+    const card = document.querySelector('#cardContainer')
     const button = document.querySelector('#button')
-    button.addEventListener('click', (e) => {
-        function createUserCard (followers,photo){
+    button.addEventListener('click', function(e){
 
-        }
+            const img = document.createElement('img')
+                img.src = photo
+                img.style.width = '100px'
+                img.style.borderRadius = '50%'
+
+            const followerText = document.createElement('p')
+                followerText.innerHTML = `followers :- ${followers}`
+
         
+            card.appendchild(img)
+            card.appendchild(followerText)
+            }
+     
     })
     
     
